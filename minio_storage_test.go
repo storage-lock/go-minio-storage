@@ -22,7 +22,7 @@ func TestMinIOStorage(t *testing.T) {
 	}
 
 	ctx := context.Background()
-	cm := s3_storage.NewS3ConnectionManagerFromConfig(endpoint, accessKey, secretKey, useSSL)
+	cm := s3_storage.NewS3ConnectionManagerFromEndpoint(endpoint, accessKey, secretKey, useSSL)
 	s, err := NewMinIOStorage(ctx, &s3_storage.S3StorageOptions{
 		ConnectionManager: cm,
 		BucketName:        bucket,
